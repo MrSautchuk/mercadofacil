@@ -1,0 +1,3089 @@
+/* ==========================================================================
+   MERCADOFÁCIL — ESTILOS NUBANK STANDARD
+   90% Monocromático de Alto Padrão + Acentos Cirúrgicos em Verde Esmeralda
+   Micro-interações Suaves, Bento Grid Assimétrico e Transições Nativas
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   LAYOUT BASE & CONTAINERS GLOBAIS
+   -------------------------------------------------------------------------- */
+.siteRoot {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  overflow-x: hidden;
+}
+
+.nuSectionContainer {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.nuSectionHeader {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 3.75rem;
+}
+
+.nuKickerPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--emerald-primary);
+  background: var(--emerald-light);
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--emerald-border);
+}
+
+.nuKickerPill.light {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.nuDisplayTitle {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.25rem;
+}
+
+.nuDisplaySubtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   1. NAVBAR MINIMALISTA NUBANK (GLASS BLUR)
+   -------------------------------------------------------------------------- */
+.nuNavbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border-ultra-subtle);
+  transition: var(--transition-normal);
+}
+
+.nuNavbar.scrolled {
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom-color: var(--border-subtle);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.03);
+}
+
+.nuNavContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nuBrand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.nuBrandIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--text-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.nuBrand:hover .nuBrandIcon {
+  background: var(--emerald-primary);
+  transform: scale(1.05);
+}
+
+.nuBrandName {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+}
+
+.nuBrandName strong {
+  font-weight: 800;
+  color: var(--emerald-primary);
+}
+
+.nuBrandName.textWhite {
+  color: #ffffff;
+}
+
+.b2bTagNavbar {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: var(--emerald-light);
+  color: var(--emerald-primary);
+  border: 1px solid var(--emerald-border);
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+  margin-left: 0.35rem;
+  letter-spacing: 0.05em;
+  vertical-align: middle;
+}
+
+/* Master Segmented Switch no topo da Navbar */
+.nuNavMasterSwitch {
+  display: flex;
+  align-items: center;
+  background: #f1f5f9;
+  padding: 4px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  margin: 0 1rem;
+}
+
+.nuNavSwitchBtn {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.nuNavSwitchBtn:hover {
+  color: var(--text-primary);
+}
+
+.nuNavSwitchBtn.active {
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.nuMobileSwitch {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nuNavSwitchBtn.full {
+  width: 100%;
+  justify-content: center;
+  padding: 10px;
+  background: #f1f5f9;
+}
+
+.nuNavSwitchBtn.full.active {
+  background: var(--emerald-primary);
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   HERO B2B (RETAILER DASHBOARD SHOWCASE)
+   ========================================================================== */
+.nuHeroSectionB2B {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.b2bBadge {
+  background: rgba(5, 150, 105, 0.1) !important;
+  color: #059669 !important;
+  border-color: rgba(5, 150, 105, 0.25) !important;
+}
+
+.greenPulse {
+  animation: pulseGreen 2s infinite;
+}
+
+@keyframes pulseGreen {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(5, 150, 105, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
+}
+
+.b2bStage {
+  max-width: 680px;
+}
+
+.b2bHeroPreviewCard {
+  width: 100%;
+  background: #090d16;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.b2bPreviewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.b2bPreviewTitle {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.b2bPreviewLive {
+  font-size: 0.75rem;
+  color: #10b981;
+  font-weight: 700;
+}
+
+.b2bPreviewContent {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.b2bKpiGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.b2bKpiCard {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.kpiLabel {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.kpiNum {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+.kpiNum.green {
+  color: #10b981;
+}
+
+.kpiSub {
+  font-size: 0.7rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.b2bPreviewUploadBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px dashed rgba(16, 185, 129, 0.35);
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.uploadBoxIcon {
+  font-size: 1.8rem;
+}
+
+.uploadBoxText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+.uploadBoxText strong {
+  font-size: 0.88rem;
+  color: #ffffff;
+}
+
+.uploadBoxText span {
+  font-size: 0.78rem;
+  color: #94a3b8;
+}
+
+.uploadBoxBtn {
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: #10b981;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease;
+}
+
+.uploadBoxBtn:hover {
+  background: #059669;
+}
+
+@media (max-width: 860px) {
+  .nuNavMasterSwitch {
+    display: none;
+  }
+  .b2bKpiGrid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .b2bPreviewUploadBox {
+    flex-direction: column;
+    text-align: center;
+  }
+  .uploadBoxText {
+    text-align: center;
+  }
+}
+
+.nuNavMenu {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.nuNavLink {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 0.4rem 0;
+  transition: var(--transition-fast);
+  position: relative;
+}
+
+.nuNavLink:hover {
+  color: var(--text-primary);
+}
+
+.nuNavLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--emerald-primary);
+  transition: width 0.2s ease;
+}
+
+.nuNavLink:hover::after {
+  width: 100%;
+}
+
+.nuNavActions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.nuBtnGhost {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 0.6rem 1.15rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-medium);
+  background: transparent;
+  transition: var(--transition-fast);
+}
+
+.nuBtnGhost:hover {
+  border-color: var(--text-primary);
+  background: var(--bg-surface-muted);
+}
+
+.nuBtnPrimary {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--radius-pill);
+  background: var(--emerald-primary);
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 10px var(--emerald-glow);
+}
+
+.nuBtnPrimary:hover {
+  background: var(--emerald-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px var(--emerald-glow);
+}
+
+.nuMobileToggle {
+  display: none;
+  padding: 0.5rem;
+  color: var(--text-primary);
+}
+
+.nuHamburgerIcon {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  position: relative;
+  transition: var(--transition-fast);
+}
+
+.nuHamburgerIcon::before, .nuHamburgerIcon::after {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.nuHamburgerIcon::before { top: -6px; }
+.nuHamburgerIcon::after { bottom: -6px; }
+
+.nuMobileDrawer {
+  display: none;
+  background: #ffffff;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 1.5rem;
+  animation: fadeInUp 0.2s var(--ease-spring);
+}
+
+.nuMobileDrawerContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.nuMobileLink {
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.nuMobileDrawerButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.fullWidth {
+  width: 100%;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   2. HERO EDITORIAL MINIMALISTA NUBANK
+   -------------------------------------------------------------------------- */
+.nuHeroSection {
+  padding: 5rem 0 0;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.nuHeroAmbientGlow {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(5, 150, 105, 0.07) 0%, rgba(248, 250, 252, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.nuHeroContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.nuHeroEditorial {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 3.5rem;
+}
+
+.nuPillBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-surface-muted);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.75rem;
+  border: 1px solid var(--border-ultra-subtle);
+}
+
+.nuPillDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--emerald-primary);
+}
+
+.nuHeroTitle {
+  font-size: 4.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+  margin-bottom: 1.5rem;
+}
+
+.nuHeroTitleHighlight {
+  color: var(--emerald-primary);
+}
+
+.nuHeroSubtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+}
+
+.nuHeroCtaRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.nuBtnHeroPrimary {
+  background: var(--emerald-primary);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 0.95rem 2rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: var(--transition-normal);
+  box-shadow: 0 4px 18px var(--emerald-glow);
+}
+
+.nuBtnHeroPrimary:hover {
+  background: var(--emerald-hover);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px var(--emerald-glow);
+}
+
+.nuBtnHeroSecondary {
+  background: var(--bg-page);
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0.95rem 1.8rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-medium);
+  transition: var(--transition-fast);
+}
+
+.nuBtnHeroSecondary:hover {
+  background: var(--bg-surface-muted);
+  border-color: var(--text-primary);
+}
+
+.nuHeroTrustStrip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-ultra-subtle);
+}
+
+.nuTrustItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+/* Palco do Smartphone Emergindo */
+.nuHeroDeviceStage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+.nuDeviceElevation {
+  position: relative;
+  z-index: 2;
+  transition: var(--transition-normal);
+  filter: drop-shadow(var(--shadow-phone));
+}
+
+.nuDeviceElevation:hover {
+  transform: translateY(-6px);
+}
+
+.nuFloatingChip {
+  position: absolute;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-lg);
+  padding: 0.85rem 1.25rem;
+  box-shadow: var(--shadow-hover);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.nuFloatingChip.chipLeft {
+  top: 18%;
+  left: 2%;
+  animation-delay: 0s;
+}
+
+.nuFloatingChip.chipRight {
+  top: 32%;
+  right: 2%;
+  animation-delay: 2.5s;
+}
+
+.chipIconBadge {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.chipIconBadge.green { background: var(--emerald-light); }
+.chipIconBadge.blue { background: #eff6ff; }
+
+.chipText {
+  display: flex;
+  flex-direction: column;
+}
+
+.chipLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.chipValue {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.nuDeviceFadeOut {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 95%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* SMARTPHONE REALISTA (INTERIOR DO DISPOSITIVO) */
+.phoneFrame {
+  width: 320px;
+  height: 610px;
+  background: #000000;
+  border-radius: 42px;
+  border: 8px solid #1e293b;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+.phoneSpeakerBar {
+  height: 24px;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding-top: 4px;
+  z-index: 10;
+}
+
+.phoneSpeaker {
+  width: 48px;
+  height: 4px;
+  background: #334155;
+  border-radius: 2px;
+}
+
+.phoneCamera {
+  width: 8px;
+  height: 8px;
+  background: #1e293b;
+  border-radius: 50%;
+}
+
+.phoneScreen {
+  flex: 1;
+  background: #0b1320;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  user-select: none;
+}
+
+.appTopBar {
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.appLocationBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.appThemeBadge {
+  font-size: 0.68rem;
+  color: #94a3b8;
+}
+
+.appHeaderArea {
+  padding: 10px 14px 6px;
+}
+
+.appTitle {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.appIndicatorsRow {
+  display: flex;
+  gap: 6px;
+}
+
+.appIndicatorPill {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.appIndicatorPill.green {
+  background: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.appIndicatorPill.yellow {
+  background: rgba(234, 179, 8, 0.15);
+  color: #facc15;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.appIndicatorPill.red {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.appTabsRow {
+  display: flex;
+  padding: 6px 10px;
+  gap: 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.appTabBtn {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  color: #94a3b8;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 5px 0;
+  border-radius: 6px;
+  transition: all 0.15s ease;
+}
+
+.appTabBtn.active {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.appItemsList {
+  flex: 1;
+  padding: 8px 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.appItemCard {
+  background: #151e2e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 7px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.appItemCard.completed {
+  opacity: 0.75;
+}
+
+.appItemLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.appCheckbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid #10b981;
+  background: transparent;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.appCheckbox.checked {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.appItemName {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.appItemPriceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.appItemPrice {
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: #10b981;
+}
+
+.appItemOldPrice {
+  font-size: 0.68rem;
+  color: #64748b;
+  text-decoration: line-through;
+}
+
+.appTagOffer {
+  font-size: 0.6rem;
+  color: #facc15;
+  background: rgba(234, 179, 8, 0.15);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
+.appTagNormal {
+  font-size: 0.6rem;
+  color: #94a3b8;
+}
+
+.appBadgeSavings {
+  font-size: 0.68rem;
+  font-weight: 800;
+  color: #10b981;
+  background: rgba(16, 185, 129, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.appEncartesPreview, .appConfigPreview {
+  padding: 12px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.appFlyerHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.appFlyerBadge {
+  color: #facc15;
+  font-size: 0.68rem;
+}
+
+.appFlyerDesc {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  line-height: 1.4;
+}
+
+.appFlyerActions {
+  display: flex;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.appFlyerBtn {
+  flex: 1;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 6px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+.appFlyerBtn.lime {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.appConfigCard {
+  background: #151e2e;
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.appConfigLabel { color: #94a3b8; }
+.appConfigVal { font-weight: 700; color: #ffffff; }
+.appConfigVal.green { color: #10b981; }
+
+.appFooterSummary {
+  background: #080d16;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.appSummaryLabel {
+  font-size: 0.65rem;
+  color: #94a3b8;
+}
+
+.appSummaryTotal {
+  font-size: 0.95rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.appSummarySaved {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: #10b981;
+}
+
+/* --------------------------------------------------------------------------
+   3. BENTO GRID ASSIMÉTRICO (NUBANK / APPLE STANDARD)
+   -------------------------------------------------------------------------- */
+.nuBentoSection {
+  padding: 6.5rem 0;
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border-ultra-subtle);
+}
+
+.nuBentoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.nuBentoCard {
+  background: var(--bg-surface);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--border-ultra-subtle);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.nuBentoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--border-subtle);
+}
+
+.nuBentoCard.cardSpan2 {
+  grid-column: span 2;
+}
+
+.bentoCardHeader {
+  margin-bottom: 2rem;
+}
+
+.bentoBadge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--emerald-primary);
+  margin-bottom: 0.75rem;
+}
+
+.bentoTitle {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.025em;
+}
+
+.bentoDescription {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Micro-UI: Cesta de Compras */
+.bentoMicroUiBasket {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.microBasketHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.microBasketTitle { color: var(--text-primary); }
+.microBasketCount { color: var(--emerald-primary); }
+
+.microBasketList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.microBasketRow {
+  background: #ffffff;
+  border: 1px solid var(--border-ultra-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.itemCheckDot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--emerald-primary);
+}
+
+.itemDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemName {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.itemStore {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.itemMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.statusPill {
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.statusPill.oferta { background: var(--status-oferta-bg); color: var(--status-oferta); }
+.statusPill.normal { background: var(--status-normal-bg); color: var(--status-normal); }
+.statusPill.comum { background: var(--status-comum-bg); color: var(--status-comum); }
+
+.itemPrice {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.microBasketFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.totalValue {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  color: var(--emerald-primary);
+}
+
+/* Micro-UI: Encartes */
+.bentoMicroUiFlyer {
+  display: flex;
+  justify-content: center;
+}
+
+.flyerThumbnailCard {
+  width: 100%;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.flyerHeaderMini {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.flyerStoreTag { color: var(--text-primary); }
+.flyerValidityTag { color: var(--emerald-primary); }
+
+.flyerGridMini {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.flyerItemMini {
+  background: #ffffff;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius-sm);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+}
+
+.flyerActionMini {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--emerald-primary);
+  padding-top: 0.4rem;
+}
+
+/* Micro-UI: Termômetro */
+.bentoMicroUiThermometer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.thermometerSelector {
+  display: flex;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  gap: 4px;
+}
+
+.thermoTab {
+  flex: 1;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 0;
+  border-radius: var(--radius-pill);
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+}
+
+.thermoTab.active.green { background: #ffffff; color: var(--status-oferta); box-shadow: var(--shadow-subtle); }
+.thermoTab.active.blue { background: #ffffff; color: var(--status-normal); box-shadow: var(--shadow-subtle); }
+.thermoTab.active.amber { background: #ffffff; color: var(--status-comum); box-shadow: var(--shadow-subtle); }
+
+.thermometerPreviewBox {
+  background: var(--bg-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.thermoIndicatorBar {
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: inline-block;
+  width: fit-content;
+}
+
+.thermoIndicatorBar.green { background: var(--status-oferta-bg); color: var(--status-oferta); }
+.thermoIndicatorBar.blue { background: var(--status-normal-bg); color: var(--status-normal); }
+.thermoIndicatorBar.amber { background: var(--status-comum-bg); color: var(--status-comum); }
+
+.thermoExplainText {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Micro-UI: Core Familiar */
+.bentoMicroUiFamily {
+  background: var(--bg-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.familyDeviceNode.titular {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--border-ultra-subtle);
+}
+
+.avatarBox {
+  font-size: 1.5rem;
+}
+
+.avatarBox.small {
+  font-size: 1.1rem;
+}
+
+.deviceInfo strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.deviceInfo span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.titularBadge {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--emerald-primary);
+  background: var(--emerald-light);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.familySyncPill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.familyMembersRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.deviceNodeMember {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--border-ultra-subtle);
+}
+
+.inviteCodeSnippet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+}
+
+.snippetCode {
+  font-family: 'Outfit', monospace;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--emerald-primary);
+}
+
+/* Micro-UI: Saldão */
+.expiryItemCard {
+  background: var(--bg-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.expiryBadge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--status-comum);
+  background: var(--status-comum-bg);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+}
+
+.expiryDetails strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.expiryStore {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.expiryPriceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.newPrice {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--emerald-primary);
+}
+
+/* Micro-UI: Transparência */
+.bentoMicroUiTransparency {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.transparencyPillRow {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tPillItem {
+  background: var(--bg-subtle);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.tBannerNotice {
+  background: var(--bg-subtle);
+  border-left: 3px solid var(--emerald-primary);
+  padding: 0.85rem 1.2rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   4. COMO FUNCIONA (FLUXO HORIZONTAL NUBANK)
+   -------------------------------------------------------------------------- */
+.nuFlowSection {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.nuStepsFlowGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.75rem;
+}
+
+.nuStepFlowCard {
+  background: var(--bg-page);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-fast);
+}
+
+.nuStepFlowCard:hover {
+  transform: translateY(-2px);
+}
+
+.nuStepTopRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.nuStepNumber {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--emerald-primary);
+}
+
+.nuStepLine {
+  flex: 1;
+  height: 2px;
+  background: var(--border-subtle);
+}
+
+.nuStepTitle {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.65rem;
+  line-height: 1.3;
+}
+
+.nuStepDesc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   5. INTERFACE REAL DO APP (PALCO DO PRODUTO)
+   -------------------------------------------------------------------------- */
+.nuShowcaseSection {
+  padding: 6.5rem 0;
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border-ultra-subtle);
+}
+
+.nuPillTabsRow {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.nuPillTabBtn {
+  background: #ffffff;
+  border: 1px solid var(--border-medium);
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.65rem 1.5rem;
+  border-radius: var(--radius-pill);
+  transition: var(--transition-fast);
+}
+
+.nuPillTabBtn:hover {
+  border-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+.nuPillTabBtn.active {
+  background: var(--text-primary);
+  color: #ffffff;
+  border-color: var(--text-primary);
+}
+
+.nuShowcaseStage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 3.5rem;
+}
+
+.nuShowcaseDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.nuShowcaseKicker {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--emerald-primary);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.nuShowcaseMainTitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.nuShowcaseDescription {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+
+.nuShowcaseBullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.nuShowcaseBulletItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.nuShowcaseDeviceWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nuDeviceFrameSleek {
+  width: 100%;
+  max-width: 360px;
+  background: #000000;
+  border-radius: 36px;
+  border: 7px solid #1e293b;
+  overflow: hidden;
+  box-shadow: var(--shadow-phone);
+}
+
+.nuRealAppImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.nuDeviceCaption {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 0.85rem;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   6. TERMÔMETRO DE OFERTAS & AUDITORIA
+   -------------------------------------------------------------------------- */
+.nuThermometerSection {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.nuThermometerGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 3.5rem;
+}
+
+.nuThermoCardsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.nuThermoLevelCard {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-ultra-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  transition: var(--transition-fast);
+}
+
+.nuThermoLevelCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.nuThermoLevelCard.green { border-left: 4px solid var(--status-oferta); }
+.nuThermoLevelCard.blue { border-left: 4px solid var(--status-normal); }
+.nuThermoLevelCard.amber { border-left: 4px solid var(--status-comum); }
+
+.levelIcon { font-size: 1.4rem; }
+
+.levelInfo h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.levelInfo p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.nuThermoSampleCard {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-card);
+}
+
+.sampleHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.sampleKicker {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.sampleBadgeLive {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--emerald-primary);
+  background: var(--emerald-light);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.sampleProductTitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.sampleMetricsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.metricCard {
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.metricKicker {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.metricMainPrice {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.metricMainPrice.green { color: var(--status-oferta); }
+.metricMainPrice.muted { color: var(--text-secondary); }
+.metricMainPrice.highlight { color: var(--status-oferta); }
+
+.metricStatusTag {
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.metricStatusTag.green { color: var(--status-oferta); }
+.metricStatusTag.neutral { color: var(--text-muted); }
+
+.sampleFooterNote {
+  background: var(--emerald-light);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: flex;
+  gap: 0.65rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. CORE FAMILIAR
+   -------------------------------------------------------------------------- */
+.nuFamilySection {
+  padding: 6.5rem 0;
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border-ultra-subtle);
+}
+
+.nuFamilyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 4rem;
+}
+
+.nuFamilyBenefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nuFamilyBenefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.benefitIconCircle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--emerald-light);
+  color: var(--emerald-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.benefitContent h4 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.benefitContent p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.nuFamilyDiagramCard {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.diagramTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.deviceCardOwner {
+  background: var(--bg-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid var(--border-ultra-subtle);
+}
+
+.ownerInfo strong {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.ownerInfo span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.ownerBadge {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--emerald-primary);
+  background: var(--emerald-light);
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.diagramSyncLine {
+  display: flex;
+  justify-content: center;
+  padding: 0.25rem 0;
+}
+
+.syncTagLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--emerald-primary);
+  background: var(--emerald-light);
+  padding: 3px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.deviceMembersGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.memberCard {
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.85rem;
+  text-align: center;
+  border: 1px solid var(--border-ultra-subtle);
+}
+
+.memberInfo strong {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--text-primary);
+}
+
+.memberInfo span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.inviteCodeCard {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.inviteKicker {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.inviteDigits {
+  font-family: 'Outfit', monospace;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 0.15em;
+  color: var(--emerald-primary);
+  margin: 0.25rem 0;
+}
+
+.inviteExpiration {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   8. SEÇÃO B2B CORPORATIVA (ESTILO NU PJ / ULTRAVIOLETA)
+   -------------------------------------------------------------------------- */
+.nuB2bSection {
+  padding: 7rem 0;
+  background: var(--b2b-bg);
+  color: var(--b2b-text-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.nuB2bContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.nuB2bHeader {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 4rem;
+}
+
+.nuB2bPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.nuB2bDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--emerald-primary);
+}
+
+.nuB2bTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.25rem;
+}
+
+.nuB2bSubtitle {
+  font-size: 1.15rem;
+  color: var(--b2b-text-secondary);
+  line-height: 1.65;
+}
+
+.nuB2bShowcaseCard {
+  background: var(--b2b-surface);
+  border: 1px solid var(--b2b-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.nuB2bShowcaseTopBar {
+  background: #0f172a;
+  padding: 0.85rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--b2b-border);
+}
+
+.nuWindowDots {
+  display: flex;
+  gap: 6px;
+}
+
+.nuWindowDots .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.nuWindowDots .dot.red { background: #ef4444; }
+.nuWindowDots .dot.yellow { background: #f59e0b; }
+.nuWindowDots .dot.green { background: #10b981; }
+
+.nuWindowTitle {
+  font-size: 0.8rem;
+  font-family: monospace;
+  color: var(--b2b-text-secondary);
+}
+
+.nuWindowStatus {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #10b981;
+}
+
+.statusDotLive {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  animation: pulseGlow 2s infinite;
+}
+
+.nuB2bShowcaseBody {
+  padding: 2.5rem;
+}
+
+.nuB2bMetricsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--b2b-border);
+}
+
+.nuB2bMetricBox {
+  background: var(--b2b-surface-elevated);
+  border: 1px solid var(--b2b-border);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.metricLabel {
+  font-size: 0.78rem;
+  color: var(--b2b-text-secondary);
+  font-weight: 600;
+}
+
+.metricValue {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffffff;
+}
+
+.metricValue.green { color: #10b981; }
+
+.metricNote {
+  font-size: 0.75rem;
+  color: var(--b2b-text-muted);
+}
+
+.nuB2bFeaturesGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.nuB2bFeatureCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--b2b-border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.4rem;
+  transition: var(--transition-fast);
+}
+
+.nuB2bFeatureCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--b2b-border-hover);
+  transform: translateY(-2px);
+}
+
+.featureIconB2b {
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.nuB2bFeatureCard h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.nuB2bFeatureCard p {
+  font-size: 0.88rem;
+  color: var(--b2b-text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.nuB2bBottomCta {
+  background: #0f172a;
+  border-top: 1px solid var(--b2b-border);
+  padding: 2.2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.nuB2bCtaText h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.35rem;
+}
+
+.nuB2bCtaText p {
+  font-size: 0.95rem;
+  color: var(--b2b-text-secondary);
+  margin: 0;
+}
+
+.nuB2bCtaActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nuBtnB2bGhost {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: var(--transition-fast);
+}
+
+.nuBtnB2bGhost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+}
+
+.nuBtnB2bPrimary {
+  background: var(--emerald-primary);
+  color: #ffffff;
+  padding: 0.85rem 1.8rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  font-weight: 800;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 15px var(--emerald-glow);
+}
+
+.nuBtnB2bPrimary:hover {
+  background: var(--emerald-hover);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------------------------------
+   9. PLANOS E PREÇOS (PILL SWITCH NUBANK)
+   -------------------------------------------------------------------------- */
+.nuPricingSection {
+  padding: 6.5rem 0;
+  background: #ffffff;
+}
+
+.nuPillSwitchContainer {
+  display: inline-flex;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-pill);
+  padding: 5px;
+  gap: 6px;
+  margin-top: 2rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.nuPillSwitchBtn {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  padding: 0.65rem 1.6rem;
+  border-radius: var(--radius-pill);
+  transition: var(--transition-fast);
+}
+
+.nuPillSwitchBtn.active {
+  background: var(--text-primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-subtle);
+}
+
+.nuPricingGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.nuPricingCard {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: var(--transition-normal);
+  box-shadow: var(--shadow-card);
+}
+
+.nuPricingCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.nuPricingCard.featured {
+  border: 2px solid var(--emerald-primary);
+  box-shadow: 0 12px 35px var(--emerald-glow);
+}
+
+.nuPlanBadgePill {
+  position: absolute;
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--emerald-primary);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 3px 14px;
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nuPlanName {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.nuPlanDesc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1.75rem;
+}
+
+.nuPlanPriceBlock {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.nuPriceVal {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: var(--text-primary);
+}
+
+.nuPricePeriod {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.nuPlanDivider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin-bottom: 1.5rem;
+}
+
+.nuPlanFeaturesList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 2.25rem;
+  flex: 1;
+}
+
+.nuPlanFeatureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  line-height: 1.45;
+}
+
+.nuBtnPlanAction {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: var(--transition-fast);
+}
+
+.nuBtnPlanAction.primary {
+  background: var(--emerald-primary);
+  color: #ffffff;
+}
+
+.nuBtnPlanAction.primary:hover {
+  background: var(--emerald-hover);
+}
+
+.nuBtnPlanAction.secondary {
+  background: var(--bg-subtle);
+  color: var(--text-primary);
+  border: 1px solid var(--border-medium);
+}
+
+.nuBtnPlanAction.secondary:hover {
+  border-color: var(--text-primary);
+  background: var(--bg-surface-muted);
+}
+
+.nuPricingNoticeCard {
+  margin-top: 3.5rem;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   10. CADASTRO COMERCIAL (FORMULÁRIO B2B)
+   -------------------------------------------------------------------------- */
+.nuRegistrationSection {
+  padding: 6.5rem 0;
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border-ultra-subtle);
+}
+
+.nuRegCardWrapper {
+  max-width: 780px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 2.75rem;
+  box-shadow: var(--shadow-card);
+}
+
+.nuFormHeaderNotice {
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.nuFormGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.nuFormField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.nuFormField.fullSpan {
+  grid-column: span 2;
+}
+
+.nuFormField label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.nuInput, .nuSelect {
+  height: 48px;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 0 1rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  background: #ffffff;
+  transition: var(--transition-fast);
+}
+
+.nuInput:focus, .nuSelect:focus {
+  outline: none;
+  border-color: var(--emerald-primary);
+  box-shadow: 0 0 0 3px var(--emerald-glow);
+}
+
+.nuFormSubmitArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  align-items: center;
+}
+
+.nuPrivacyDisclaimer {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.nuRegSuccessCard {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.nuSuccessCheck {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--emerald-light);
+  color: var(--emerald-primary);
+  font-size: 1.8rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+
+.nuSuccessTitle {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.nuSuccessText {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   11. DOWNLOAD & DISPONIBILIDADE
+   -------------------------------------------------------------------------- */
+.nuDownloadSection {
+  padding: 6.5rem 0;
+  background: #ffffff;
+}
+
+.nuDownloadCard {
+  background: var(--text-primary);
+  color: #ffffff;
+  border-radius: var(--radius-xl);
+  padding: 3.5rem;
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 3.5rem;
+  align-items: center;
+  box-shadow: var(--shadow-hover);
+}
+
+.nuDownloadTitle {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.nuDownloadDesc {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+.nuDownloadBtnRow {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nuDownloadSpecsCol {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.specKey { color: #94a3b8; }
+.specVal { color: #ffffff; font-weight: 700; }
+
+/* --------------------------------------------------------------------------
+   12. FAQ ACORDEÃO (DIVIDERS MINIMALISTAS NUBANK)
+   -------------------------------------------------------------------------- */
+.nuFaqSection {
+  padding: 6.5rem 0;
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border-ultra-subtle);
+}
+
+.nuFaqAccordion {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.nuFaqItem {
+  border-bottom: 1px solid var(--border-subtle);
+  transition: var(--transition-fast);
+}
+
+.nuFaqQuestion {
+  width: 100%;
+  padding: 1.6rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.nuFaqQuestionText {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.nuFaqQuestion:hover .nuFaqQuestionText {
+  color: var(--emerald-primary);
+}
+
+.nuFaqChevron {
+  color: var(--text-muted);
+  transition: transform 0.25s var(--ease-spring);
+}
+
+.nuFaqItem.open .nuFaqChevron {
+  transform: rotate(180deg);
+  color: var(--emerald-primary);
+}
+
+.nuFaqAnswer {
+  padding-bottom: 1.6rem;
+  animation: fadeInUp 0.25s var(--ease-spring);
+}
+
+.nuFaqAnswer p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   13. RODAPÉ INSTITUCIONAL (HIGH DENSITY MINIMAL NUBANK)
+   -------------------------------------------------------------------------- */
+.nuFooter {
+  background: #090d16;
+  color: #94a3b8;
+  padding: 5.5rem 0 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nuFooterGrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 3.5rem;
+  margin-bottom: 4.5rem;
+}
+
+.nuFooterBrandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.nuFooterBrandDesc {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #94a3b8;
+  max-width: 320px;
+}
+
+.nuFooterPilotTag {
+  font-size: 0.8rem;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+}
+
+.nuFooterHeading {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5rem;
+}
+
+.nuFooterLinks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.nuFooterLinks button, .nuFooterLinks a {
+  font-size: 0.92rem;
+  color: #94a3b8;
+  transition: var(--transition-fast);
+  text-align: left;
+}
+
+.nuFooterLinks button:hover, .nuFooterLinks a:hover {
+  color: #ffffff;
+}
+
+.nuFooterLinks span {
+  font-size: 0.88rem;
+  color: #64748b;
+}
+
+.nuFooterBottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #64748b;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   MODAL DO PORTAL DO LOJISTA
+   -------------------------------------------------------------------------- */
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 1.5rem;
+  animation: fadeInUp 0.2s var(--ease-spring);
+}
+
+.modalDialogLight {
+  background: #ffffff;
+  border-radius: var(--radius-xl);
+  max-width: 860px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-modal);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeaderLight {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalHeaderTitleLight {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modalTitleIcon {
+  font-size: 1.8rem;
+}
+
+.modalMainHeading {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.modalSubHeading {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0.2rem 0 0;
+}
+
+.modalCloseBtnLight {
+  background: none;
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  transition: var(--transition-fast);
+}
+
+.modalCloseBtnLight:hover {
+  background: var(--bg-surface-muted);
+  color: var(--text-primary);
+}
+
+.modalBodyLight {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.modalSectionCard {
+  background: #ffffff;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.8rem;
+}
+
+.modalSectionTitle {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.modalFeedbackBox {
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.modalFeedbackBox.success {
+  background: var(--emerald-light);
+  border: 1px solid var(--emerald-border);
+  color: var(--emerald-primary);
+}
+
+.modalFeedbackBox.error {
+  background: #fef2f2;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #dc2626;
+}
+
+.modalFormGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.modalFormGrid .fullSpan {
+  grid-column: span 2;
+}
+
+.modalOffersHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.btnRefreshOffers {
+  background: none;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.modalTableContainer {
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.modalTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  text-align: left;
+}
+
+.modalTable th {
+  background: var(--bg-subtle);
+  padding: 10px 14px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.modalTable td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+}
+
+.statusBadge {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.statusBadge.expiry { background: #fef3c7; color: #b45309; }
+.statusBadge.promo { background: var(--emerald-light); color: var(--emerald-primary); }
+.statusBadge.active { background: #ecfdf5; color: var(--emerald-primary); }
+
+/* --------------------------------------------------------------------------
+   RESPONSIVIDADE (MOBILE & TABLET BREAKPOINTS)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .nuHeroTitle {
+    font-size: 3.2rem;
+  }
+  .nuBentoGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .nuBentoCard.cardSpan2 {
+    grid-column: span 2;
+  }
+  .nuStepsFlowGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .nuShowcaseStage {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .nuThermometerGrid {
+    grid-template-columns: 1fr;
+  }
+  .nuFamilyGrid {
+    grid-template-columns: 1fr;
+  }
+  .nuB2bMetricsRow {
+    grid-template-columns: 1fr 1fr;
+  }
+  .nuB2bFeaturesGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .nuPricingGrid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 2rem auto 0;
+  }
+  .nuDownloadCard {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .nuFooterGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nuNavMenu, .nuBtnGhost, .nuBtnPrimary {
+    display: none;
+  }
+  .nuMobileToggle {
+    display: block;
+  }
+  .nuHeroTitle {
+    font-size: 2.5rem;
+  }
+  .nuHeroSubtitle {
+    font-size: 1.05rem;
+  }
+  .nuDisplayTitle {
+    font-size: 2.1rem;
+  }
+  .nuBentoGrid {
+    grid-template-columns: 1fr;
+  }
+  .nuBentoCard.cardSpan2 {
+    grid-column: span 1;
+  }
+  .nuStepsFlowGrid {
+    grid-template-columns: 1fr;
+  }
+  .nuB2bMetricsRow {
+    grid-template-columns: 1fr;
+  }
+  .nuB2bFeaturesGrid {
+    grid-template-columns: 1fr;
+  }
+  .nuFormGrid {
+    grid-template-columns: 1fr;
+  }
+  .nuFormField.fullSpan {
+    grid-column: span 1;
+  }
+  .nuFloatingChip {
+    display: none;
+  }
+  .nuFooterGrid {
+    grid-template-columns: 1fr;
+  }
+  .nuFooterBottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}

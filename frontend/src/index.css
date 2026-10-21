@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  /* ==========================================================================
+     DESIGN SYSTEM TOKENS — NUBANK STANDARD (MERCADOFÁCIL)
+     90% Monocromático de Alto Padrão + Acentos Cirúrgicos em Verde Esmeralda
+     Micro-animações Nativas & Bento Grid de Alta Fidelidade
+     ========================================================================== */
+
+  /* Cores Base Monocromáticas (Apple / Nubank standard) */
+  --bg-page: #ffffff;
+  --bg-subtle: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #ffffff;
+  --bg-surface-muted: #f1f5f9;
+  --bg-pill: #f1f5f9;
+
+  /* Cores B2B Corporativo (Estilo Nu PJ / Ultravioleta) */
+  --b2b-bg: #090d16;
+  --b2b-surface: #111827;
+  --b2b-surface-elevated: #1e293b;
+  --b2b-border: rgba(255, 255, 255, 0.08);
+  --b2b-border-hover: rgba(255, 255, 255, 0.18);
+  --b2b-text-primary: #ffffff;
+  --b2b-text-secondary: #94a3b8;
+  --b2b-text-muted: #64748b;
+
+  /* Tipografia & Contraste (Grafite profundo #0f172a) */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --text-white: #ffffff;
+
+  /* Acento Cirúrgico Verde Esmeralda (Exclusivo para CTAs & Indicadores) */
+  --emerald-primary: #059669;
+  --emerald-hover: #047857;
+  --emerald-active: #065f46;
+  --emerald-light: #ecfdf5;
+  --emerald-border: rgba(5, 150, 105, 0.25);
+  --emerald-glow: rgba(5, 150, 105, 0.16);
+
+  /* Status Semânticos do Aplicativo */
+  --status-oferta: #059669;
+  --status-oferta-bg: #ecfdf5;
+  --status-normal: #3b82f6;
+  --status-normal-bg: #eff6ff;
+  --status-comum: #d97706;
+  --status-comum-bg: #fffbeb;
+
+  /* Linhas & Bordas Ultra-Refinadas */
+  --border-ultra-subtle: rgba(15, 23, 42, 0.05);
+  --border-subtle: #e2e8f0;
+  --border-medium: #cbd5e1;
+  --border-focus: #059669;
+
+  /* Raios de Arredondamento Suaves */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-pill: 9999px;
+
+  /* Sombras Orgânicas e Profundidade (Sem aspecto de blur barato) */
+  --shadow-subtle: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  --shadow-hover: 0 20px 35px -4px rgba(15, 23, 42, 0.08), 0 8px 16px -2px rgba(15, 23, 42, 0.04);
+  --shadow-modal: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  --shadow-phone: 0 35px 70px -15px rgba(15, 23, 42, 0.28), 0 0 0 1px rgba(0, 0, 0, 0.05);
+
+  /* Transições Ultra Suaves (Física Nativa) */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.18s var(--ease-spring);
+  --transition-normal: all 0.3s var(--ease-spring);
+  --transition-slow: all 0.5s var(--ease-spring);
+}
+
+/* --------------------------------------------------------------------------
+   RESET GLOBAL & TIPOGRAFIA
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-primary);
+  letter-spacing: -0.035em;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid var(--emerald-primary);
+  outline-offset: 2px;
+}
+
+/* Micro-animações globais */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

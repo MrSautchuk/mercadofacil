@@ -1,0 +1,275 @@
+{
+  "communities": {
+    "0": [
+      "backend_server",
+      "backend_server_app",
+      "backend_server_checkandrunsundaypurge",
+      "backend_server_common_supermarket_items",
+      "backend_server_cors",
+      "backend_server_db",
+      "backend_server_express",
+      "backend_server_fallback_models",
+      "backend_server_fs",
+      "backend_server_generatewithfallback",
+      "backend_server_getactiveitems",
+      "backend_server_getmimetype",
+      "backend_server_getsetting",
+      "backend_server_googlegenai",
+      "backend_server_multer",
+      "backend_server_path",
+      "backend_server_processflyerwithgemini",
+      "backend_server_purgeallflyers",
+      "backend_server_setsetting",
+      "backend_server_startweeklyflyerpurgescheduler",
+      "backend_server_upload",
+      "backend_server_uploadsdir",
+      "ref_fs"
+    ],
+    "1": [
+      "mobile_app_app",
+      "mobile_app_getitemicon",
+      "mobile_app_js_mobile_app",
+      "mobile_app_styles",
+      "mobile_index",
+      "mobile_package",
+      "mobile_package_json_ref_react",
+      "mobile_package_main",
+      "mobile_package_name",
+      "mobile_package_private",
+      "mobile_package_version",
+      "mobile_src_config",
+      "mobile_src_config_default_api_base",
+      "ref_expo",
+      "ref_expo_document_picker",
+      "ref_expo_file_system",
+      "ref_expo_image_picker",
+      "ref_expo_status_bar",
+      "ref_expo_vector_icons",
+      "ref_react_native",
+      "ref_react_native_async_storage_async_storage"
+    ],
+    "2": [
+      "frontend_package",
+      "frontend_package_dependencies",
+      "frontend_package_dependencies_react",
+      "frontend_package_dependencies_react_dom",
+      "frontend_package_json_ref_react",
+      "frontend_package_name",
+      "frontend_package_private",
+      "frontend_package_scripts",
+      "frontend_package_scripts_build",
+      "frontend_package_scripts_dev",
+      "frontend_package_scripts_lint",
+      "frontend_package_scripts_preview",
+      "frontend_package_type",
+      "frontend_package_version",
+      "frontend_vite_config",
+      "ref_oxlint",
+      "ref_types_react",
+      "ref_types_react_dom",
+      "ref_vite",
+      "ref_vitejs_plugin_react"
+    ],
+    "3": [
+      "mobile_app_adaptiveicon_backgroundcolor",
+      "mobile_app_adaptiveicon_backgroundimage",
+      "mobile_app_adaptiveicon_foregroundimage",
+      "mobile_app_adaptiveicon_monochromeimage",
+      "mobile_app_android_adaptiveicon",
+      "mobile_app_expo",
+      "mobile_app_expo_android",
+      "mobile_app_expo_icon",
+      "mobile_app_expo_ios",
+      "mobile_app_expo_name",
+      "mobile_app_expo_orientation",
+      "mobile_app_expo_slug",
+      "mobile_app_expo_userinterfacestyle",
+      "mobile_app_expo_version",
+      "mobile_app_expo_web",
+      "mobile_app_ios_supportstablet",
+      "mobile_app_json_mobile_app",
+      "mobile_app_web_favicon"
+    ],
+    "4": [
+      "backend_package",
+      "backend_package_allowscripts",
+      "backend_package_allowscripts_sqlite3_6_0_1",
+      "backend_package_description",
+      "backend_package_keywords",
+      "backend_package_main",
+      "backend_package_name",
+      "backend_package_scripts",
+      "backend_package_scripts_test",
+      "backend_package_type",
+      "backend_package_version",
+      "ref_cors",
+      "ref_express",
+      "ref_google_genai",
+      "ref_multer",
+      "ref_sqlite3"
+    ],
+    "5": [
+      "mobile_package_dependencies",
+      "mobile_package_dependencies_expo",
+      "mobile_package_dependencies_expo_document_picker",
+      "mobile_package_dependencies_expo_file_system",
+      "mobile_package_dependencies_expo_image_picker",
+      "mobile_package_dependencies_expo_status_bar",
+      "mobile_package_dependencies_expo_vector_icons",
+      "mobile_package_dependencies_react",
+      "mobile_package_dependencies_react_native",
+      "mobile_package_dependencies_react_native_async_storage_async_storage"
+    ],
+    "6": [
+      "backend_database",
+      "backend_database_db",
+      "backend_database_dbpath",
+      "backend_database_path",
+      "backend_database_sqlite3",
+      "ref_path"
+    ],
+    "7": [
+      "backend_package_dependencies",
+      "backend_package_dependencies_cors",
+      "backend_package_dependencies_express",
+      "backend_package_dependencies_google_genai",
+      "backend_package_dependencies_multer",
+      "backend_package_dependencies_sqlite3"
+    ],
+    "8": [
+      "frontend_oxlintrc",
+      "frontend_oxlintrc_plugins",
+      "frontend_oxlintrc_rules",
+      "frontend_oxlintrc_rules_react_only_export_components",
+      "frontend_oxlintrc_rules_react_rules_of_hooks",
+      "frontend_oxlintrc_schema"
+    ],
+    "9": [
+      "frontend_package_devdependencies",
+      "frontend_package_devdependencies_oxlint",
+      "frontend_package_devdependencies_types_react",
+      "frontend_package_devdependencies_types_react_dom",
+      "frontend_package_devdependencies_vite",
+      "frontend_package_devdependencies_vitejs_plugin_react"
+    ],
+    "10": [
+      "frontend_src_app",
+      "frontend_src_app_app",
+      "frontend_src_index",
+      "frontend_src_main",
+      "ref_react",
+      "ref_react_dom"
+    ],
+    "11": [
+      "mobile_package_scripts",
+      "mobile_package_scripts_android",
+      "mobile_package_scripts_ios",
+      "mobile_package_scripts_start",
+      "mobile_package_scripts_web"
+    ]
+  },
+  "cohesion": {
+    "0": 0.11462450592885376,
+    "1": 0.14285714285714285,
+    "2": 0.10526315789473684,
+    "3": 0.1111111111111111,
+    "4": 0.125,
+    "5": 0.2,
+    "6": 0.3333333333333333,
+    "7": 0.3333333333333333,
+    "8": 0.3333333333333333,
+    "9": 0.3333333333333333,
+    "10": 0.4666666666666667,
+    "11": 0.4
+  },
+  "gods": [
+    {
+      "id": "mobile_app_expo",
+      "label": "expo",
+      "degree": 10
+    },
+    {
+      "id": "backend_server_checkandrunsundaypurge",
+      "label": "checkAndRunSundayPurge()",
+      "degree": 5
+    },
+    {
+      "id": "mobile_package_scripts",
+      "label": "scripts",
+      "degree": 5
+    },
+    {
+      "id": "frontend_package_scripts",
+      "label": "scripts",
+      "degree": 5
+    },
+    {
+      "id": "mobile_app_android_adaptiveicon",
+      "label": "adaptiveIcon",
+      "degree": 5
+    },
+    {
+      "id": "backend_server_processflyerwithgemini",
+      "label": "processFlyerWithGemini()",
+      "degree": 4
+    },
+    {
+      "id": "backend_server_getsetting",
+      "label": "getSetting()",
+      "degree": 3
+    },
+    {
+      "id": "mobile_app_app",
+      "label": "App()",
+      "degree": 3
+    },
+    {
+      "id": "frontend_oxlintrc_rules",
+      "label": "rules",
+      "degree": 3
+    },
+    {
+      "id": "backend_server_generatewithfallback",
+      "label": "generateWithFallback()",
+      "degree": 2
+    }
+  ],
+  "surprises": [],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `react-dom` connect `main.jsx` to `frontend/package.json`?",
+      "why": "High betweenness centrality (0.106) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `dependencies` connect `dependencies` to `mobile/package.json`?",
+      "why": "High betweenness centrality (0.056) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `devDependencies` connect `devDependencies` to `frontend/package.json`?",
+      "why": "High betweenness centrality (0.032) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `app`, `COMMON_SUPERMARKET_ITEMS`, `cors` to the rest of the system?",
+      "why": "84 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `server.js` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.11462450592885376 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `mobile/package.json` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `frontend/package.json` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
