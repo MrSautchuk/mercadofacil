@@ -30,3 +30,4 @@
 - [architecture] Fila offline-first `SyncQueueService` com persistência local no AsyncStorage e sync monotônico → tech-decisions.md
 - [architecture] Compilação nativa Android no EAS com `usesCleartextTraffic: true` para testes HTTP → tech-decisions.md
 - [architecture] Chave Gemini protegida fora do Git com expurgo do app.db, suporte nativo a .env e .gitignore reforçado → tech-decisions.md
+- [architecture] Repositório oficial GitHub sincronizado em https://github.com/MrSautchuk/mercadofacil (branch main) → tech-decisions.md
